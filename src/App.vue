@@ -63,7 +63,7 @@
       id: 1,
       nome: 'Outlast',
       plataforma: 'Ps, Xbox, Pc',
-      preco: ,
+      preco: 59.99,
       capa: ''
     },
     {
