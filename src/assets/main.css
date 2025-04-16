@@ -93,3 +93,31 @@ header ul.icon li:nth-child(2){
 header ul.icon li{
     font-size: 0.8rem;
 }
+
+/*Pesquisar*/
+.pesquisar {
+  position: relative;
+  display: inline-block;
+}
+
+.pesquisar input {
+  width: 200px;
+  padding: 10px 40px 10px 15px; 
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+
+.pesquisar span {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 20px;
+  pointer-events: none;
+}
+
