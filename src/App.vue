@@ -5,56 +5,56 @@
       nome: 'Bioshock 1',
       plataforma: 'Ps, Xbox, Pc',
       preco: 25,
-      capa: ''
+      capa: 'public/img/bioshock.jpg'
     },
     {
       id: 2,
       nome: 'The last of us 2 Remastered',
       plataforma: 'Ps5, Pc',
       preco: 400,
-      capa: ''
+      capa: 'public/img/tlou.png'
     },
     {
       id: 3,
       nome: 'Dead by daylihght',
       plataforma: 'Ps, Xbox, Pc',
       preco: 59.99,
-      capa: ''
+      capa: 'public/img/Dead_By_Daylight.png'
     },
     {
       id: 4,
       nome: 'Dying light',
       plataforma: 'Ps, Xbox, Pc',
       preco: 39.99,
-      capa: ''
+      capa: 'public/img/diyng light.jpg'
     },
     {
       id: 5,
       nome: 'Uncharted',
       plataforma: 'Ps, Pc',
       preco: 199.90,
-      capa: ''
+      capa: 'public/img/uncharted.png'
     },
     {
       id: 6,
       nome: 'God Of War',
       plataforma: 'Ps, Pc',
       preco: 199.90,
-      capa: ''
+      capa: 'public/img/GOW.png'
     },
     {
       id: 7,
       nome: 'Far Cry 4',
       plataforma: 'Ps, Xbox, Pc',
       preco: 89.99,
-      capa: ''
+      capa: 'public/img/farcry.jpg'
     },
     {
       id: 8,
       nome: 'Resident Evil 4',
       plataforma: 'Ps, Xbox, Pc',
       preco: 39.99,
-      capa: ''
+      capa: 'public/img/residentEvil.jpg'
     },
   ]
 
@@ -300,26 +300,11 @@
   <ul>
     <li v-for="jogo in jogosAcao">
       nome: {{ jogo.nome }}
+      <img :src="jogo.capa" alt="">
     </li>
   </ul>
   
-  <ul>
-    <li v-for="jogo in jogosTerror">
-      nome: {{ jogo.nome }}
-    </li>
-  </ul>
 
-  <ul>
-    <li v-for="jogo in jogosSurvival">
-      nome: {{ jogo.nome }}
-    </li>
-  </ul>
-
-  <ul>
-    <li v-for="jogo in jogosMA">
-      nome: {{ jogo.nome }}
-    </li>
-  </ul>
   
   </html>
 </template>
