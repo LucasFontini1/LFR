@@ -65,6 +65,13 @@ header{
   background-color: #f7f08e;
   font-family: 'comfortaa';
 }
+
+header h1 img{
+  width: 5vw;
+  height: 5vw;
+  border-radius: 2vw;
+}
+
 header input{
     font-size: 0.6rem;
     border: 2px rgb(161, 161, 0) solid ;

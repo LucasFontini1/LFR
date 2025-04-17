@@ -244,7 +244,7 @@
 
   <header>
 
-    <h1><a href="./App.vue">Games LFR</a></h1>
+    <h1><a href="./App.vue"><img src="/public/img/logo.png" alt="GAMES LFR"></a></h1>
 
     <div class="pesquisar">
       <input type="text" placeholder="Pesquisar" >
