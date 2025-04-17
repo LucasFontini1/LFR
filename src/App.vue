@@ -230,7 +230,7 @@
       id: 8,
       nome: 'Fallout',
       plataforma: 'Ps, Xbox, Pc',
-      preco: 59,99,
+      preco: 59.99,
       capa: ''
     },
   ]
