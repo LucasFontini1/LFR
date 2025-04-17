@@ -300,7 +300,7 @@
   <ul>
     <li v-for="jogo in jogosAcao">
       nome: {{ jogo.nome }}
-      <img :src="jogo.capa" alt="">
+      <img :src="jogo.capa" :alt="jogo.nome">
     </li>
   </ul>
   
