@@ -1,242 +1,9 @@
 <script setup>
 import {ref} from 'vue';
 
+import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
-  const jogosAcao = [
-    {
-      id: 1,
-      nome: 'Bioshock 1',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 25,
-      capa: 'public/img/bioshock.jpg'
-    },
-    {
-      id: 2,
-      nome: 'The last of us 2 Remastered',
-      plataforma: 'Ps5, Pc',
-      preco: 400,
-      capa: 'public/img/tlou.png'
-    },
-    {
-      id: 3,
-      nome: 'Dead by daylihght',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 59.99,
-      capa: 'public/img/Dead_By_Daylight.png'
-    },
-    {
-      id: 4,
-      nome: 'Dying light',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 39.99,
-      capa: 'public/img/diyng light.jpg'
-    },
-    {
-      id: 5,
-      nome: 'Uncharted',
-      plataforma: 'Ps, Pc',
-      preco: 199.90,
-      capa: 'public/img/uncharted.png'
-    },
-    {
-      id: 6,
-      nome: 'God Of War',
-      plataforma: 'Ps, Pc',
-      preco: 199.90,
-      capa: 'public/img/GOW.png'
-    },
-    {
-      id: 7,
-      nome: 'Far Cry 4',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 89.99,
-      capa: 'public/img/farcry.jpg'
-    },
-    {
-      id: 8,
-      nome: 'Resident Evil 4',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 39.99,
-      capa: 'public/img/residentEvil.jpg'
-    },
-  ]
-
-  const jogosTerror = [
-    {
-      id: 1,
-      nome: 'Outlast',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 59.99,
-      capa: 'public/img/outlast.jpg'
-    },
-    {
-      id: 2,
-      nome: 'Fnaf',
-      plataforma: 'Ps5, Pc',
-      preco: 75,
-      capa: 'public/img/FNAF.jpg'
-    },
-    {
-      id: 3,
-      nome: 'Visage',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 65.99,
-      capa: 'public/img/visage.jpg'
-    },
-    {
-      id: 4,
-      nome: 'Phasmophobia',
-      plataforma: 'Pc',
-      preco: 59.99,
-      capa: 'public/img/phasmophobia.jpg'
-    },
-    {
-      id: 5,
-      nome: 'Poppy Playtime',
-      plataforma: 'Pc',
-      preco: 46.99,
-      capa: 'public/img/poppyplaytime.jpg'
-    },
-    {
-      id: 6,
-      nome: 'Stay out of the house',
-      plataforma: 'Pc',
-      preco: 59.90,
-      capa: 'public/img/stayoutofthehouse.jpg'
-    },
-    {
-      id: 7,
-      nome: 'Nun Massacre',
-      plataforma: 'Pc',
-      preco: 50,
-      capa: 'public/img/nunmassacre.jpg'
-    },
-    {
-      id: 8,
-      nome: 'Silent Hill',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 349.90,
-      capa: 'public/img/silenthill.jpg'
-    },
-  ]
-
-  const jogosSurvival = [
-    {
-      id: 1,
-      nome: 'Minecraft',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 200,
-      capa: 'public/img/minecraft.png'
-    },
-    {
-      id: 2,
-      nome: 'ARK',
-      plataforma: 'Ps5, Xbox, Pc',
-      preco: 46.99,
-      capa: 'public/img/ark.jpg'
-    },
-    {
-      id: 3,
-      nome: 'The Forest',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 37.99,
-      capa: 'public/img/forest.jpeg'
-    },
-    {
-      id: 4,
-      nome: 'No man`s sky',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 162,
-      capa: 'public/img/nomanssky.jpg'
-    },
-    {
-      id: 5,
-      nome: 'Stranded Deep',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 37.99,
-      capa: 'public/img/stranded.jpeg'
-    },
-    {
-      id: 6,
-      nome: 'Subnautica',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 124.50,
-      capa: 'public/img/subnautica.png'
-    },
-    {
-      id: 7,
-      nome: 'Raft',
-      plataforma: 'Pc',
-      preco: 36.99,
-      capa: 'public/img/raft.jpg'
-    },
-    {
-      id: 8,
-      nome: 'Green Hell',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 16.82,
-      capa: 'public/img/green.jpg'
-    },
-  ]
-
-  const jogosMA = [
-    {
-      id: 1,
-      nome: 'Red Dead Redemption',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 200,
-      capa: 'public/img/rdr2.png'
-    },
-    {
-      id: 2,
-      nome: 'GTA',
-      plataforma: 'Ps5, Xbox, Pc',
-      preco: 37,
-      capa: 'public/img/gta.png'
-    },
-    {
-      id: 3,
-      nome: 'Watch Dogs',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 22.49,
-      capa: 'public/img/watchdogs2.png'
-    },
-    {
-      id: 4,
-      nome: 'Assassin`s Creed',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 349.99,
-      capa: 'public/img/ac.jpg'
-    },
-    {
-      id: 5,
-      nome: 'Spider Man',
-      plataforma: 'Ps, Pc',
-      preco: 249.90,
-      capa: 'public/img/spiderman.jpg'
-    },
-    {
-      id: 6,
-      nome: 'Batman Arkham',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 89.99,
-      capa: 'public/img/batman.jpg'
-    },
-    {
-      id: 7,
-      nome: 'DAYZ',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 74.99,
-      capa: 'public/img/dayz.jpg'
-    },
-    {
-      id: 8,
-      nome: 'Fallout',
-      plataforma: 'Ps, Xbox, Pc',
-      preco: 59.99,
-      capa: 'public/img/fallout.jpg'
-    },
-  ]
+  
 
  
 
@@ -256,12 +23,18 @@ import {ref} from 'vue';
   genero.value = 3
  }
 
+
+
+ function toggleFavorito(jogo) {
+  jogo.favorito = !jogo.favorito; 
+}
+
 </script>
 
 
 
 <template>
-  <html>
+  
     
 
   <header>
@@ -327,16 +100,17 @@ import {ref} from 'vue';
       font-family: sans-serif;">
         Jogos
       </h2>
-      <h3>
-        Categorias
-      </h3>
-      <div class="estilos">
+      
+      <div class="generos">
+        
+      <div>
         <button @click="action()">
           Ação
         </button>
         <button @click="terror()">
           terror
         </button>
+        
         <button @click="survival()">
           Sobrevivência
         </button>
@@ -344,65 +118,129 @@ import {ref} from 'vue';
           Mundo aberto
         </button>
       </div>
+      </div>
 
     </div>
   </section>
 
   <section>
+    <transition name="fade" mode="out-in">
   <div v-if="genero == 0">
     <ul class="gayme">
-      <li v-for="jogo in jogosAcao">
+      <li v-for="jogo in jogosAcao" key="jogo.id">
         <img :src="jogo.capa" :alt="jogo.nome">
+        <div class="cora">
+          <div>
         <p class="nome">{{ jogo.nome }}</p>
         <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
         <p class="plataforma">{{ jogo.plataforma }}</p>
+        </div>
+        <span
+  class="fa-heart"
+  :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
+  @click="toggleFavorito(jogo)"
+></span>
+        </div>
+        <button class="buy">
+          <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+        </button>
       </li>
     </ul>
   </div>
-
+  </transition>
+  
+  <transition name="fade" mode="out-in">
   <div v-if="genero == 1">
     <ul class="gayme">
-      <li v-for="jogo in jogosTerror">
+      <li v-for="jogo in jogosTerror" key="jogo.id">
         <img :src="jogo.capa" :alt="jogo.nome">
+        <div class="cora">
+          <div>
         <p class="nome">{{ jogo.nome }}</p>
         <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
         <p class="plataforma">{{ jogo.plataforma }}</p>
+        </div>
+        <span class="fa-regular fa-heart" style="margin-top: 2vw;"></span>
+        </div>
+        <button class="buy">
+          <span
+  class="fa-heart"
+  :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
+  @click="toggleFavorito(jogo)"
+></span>
+        </button>
       </li>
     </ul>
   </div>
-
+  </transition>
+  <transition name="fade" mode="out-in">
   <div v-if="genero == 2">
     <ul class="gayme">
-      <li v-for="jogo in jogosSurvival">
+      <li v-for="jogo in jogosSurvival" key="jogo.id">
         <img :src="jogo.capa" :alt="jogo.nome">
+        <div class="cora">
+          <div>
         <p class="nome">{{ jogo.nome }}</p>
         <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
         <p class="plataforma">{{ jogo.plataforma }}</p>
+        </div>
+        <span
+  class="fa-heart"
+  :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
+  @click="toggleFavorito(jogo)"
+></span>
+        </div>
+        <button class="buy">
+          <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+        </button>
       </li>
     </ul>
   </div>
+  </transition>
 
+  <transition name="fade" mode="out-in">
   <div v-if="genero == 3">
     <ul class="gayme">
-      <li v-for="jogo in jogosMA">
+      <li v-for="jogo in jogosMA" key="jogo.id">
         <img :src="jogo.capa" :alt="jogo.nome">
+        <div class="cora" style="display: flex;
+        justify-content: space-between  ;">
+          <div>
         <p class="nome">{{ jogo.nome }}</p>
         <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
         <p class="plataforma">{{ jogo.plataforma }}</p>
+      </div>
+      <span
+  class="fa-heart"
+  :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
+  @click="toggleFavorito(jogo)"
+></span>
+      </div>
+        <button class="buy">
+          <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+        </button>
       </li>
     </ul>
   </div>
-
+  </transition>
 
 </section>
 </main>
 
   
-  </html>
+
 </template>
 
 
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.1s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0.2;
+}
+
+
 main{
   background-color: aliceblue;
 }
@@ -418,12 +256,13 @@ main{
 
   ul.gayme li{
     width:20.5%;
-    padding: 1vw 2vw;
+    padding: 1vw 2vw 2vw 2vw;
   }
 
   ul.gayme li img{
     width:100%;
     height: 25vw;
+    margin-bottom: 0.5vw;
   }
 
   ul.gayme li p.nome{
@@ -437,5 +276,74 @@ main{
   ul.gayme li p.plataforma{
     font-size: 0.6rem;
   }
+  ul.gayme li button {
+    width: 100%;
+    text-align: center;
+    background-color: #27AE60;
+    border: none;
+    color: white;
+    border-radius:0.5vw ;
+    height: 2.5vw;
+    font-size: 0.75rem;
+    margin-top: 1vw;
+    cursor: pointer;
+  }
+  ul.gayme li button:hover{
+    background-color: #1f8b4c;
+    transition: 0.2s;
+  }
+
+  /*GENEROS */
+
+.generos div{
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+}
+
+.generos div button{
+  width: 10%;
+  height: 5vw;
+  font-size: 0.8rem;
+  border: none;
+  background-color: #3a434a;
+  border-radius: 2vw;
+  color: white;
+  cursor: pointer;
+  font-family: 'DM Sans';
+  box-shadow: 0.2vw 0.2vw black;
+  text-shadow: black 0.1vw 0.1vw;
+}
+.generos div button:nth-child(2){
+  margin: 0 2vw
+}
+.generos div button:nth-child(3){
+  margin-right: 2vw;
+}
+  .generos div button:hover{
+  background-color: #596670;
+  width: 11%;
+  height: 5.2vw;
+  transition: 0.5s;
+}
+
+.cora span{
+  cursor: pointer;
+}
+.cora{
+  display: flex;
+        justify-content: space-between  ;
+}
+
+
+
+.fa-heart {
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.favorito {
+  color: red;
+}
 
 </style>
