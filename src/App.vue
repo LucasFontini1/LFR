@@ -297,9 +297,8 @@
 
   </header>
   
-  <ul>
+  <ul class="gayme">
     <li v-for="jogo in jogosAcao">
-      nome: {{ jogo.nome }}
       <img :src="jogo.capa" :alt="jogo.nome">
     </li>
   </ul>
@@ -311,5 +310,21 @@
 
 
 <style scoped>
- 
+  ul.gayme{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  ul.gayme li{
+    width:25%;
+  }
+
+  ul.gayme li img{
+    width:80%;
+    height: 20vw;
+  }
+
 </style>
