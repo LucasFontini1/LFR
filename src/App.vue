@@ -1,4 +1,7 @@
 <script setup>
+import {ref} from 'vue';
+
+
   const jogosAcao = [
     {
       id: 1,
@@ -137,7 +140,7 @@
       nome: 'The Forest',
       plataforma: 'Ps, Xbox, Pc',
       preco: 37.99,
-      capa: 'public/img/theforest.jpg'
+      capa: 'public/img/forest.jpeg'
     },
     {
       id: 4,
@@ -151,7 +154,7 @@
       nome: 'Stranded Deep',
       plataforma: 'Ps, Xbox, Pc',
       preco: 37.99,
-      capa: 'public/img/strandeddeep.jpg'
+      capa: 'public/img/stranded.jpeg'
     },
     {
       id: 6,
@@ -172,7 +175,7 @@
       nome: 'Green Hell',
       plataforma: 'Ps, Xbox, Pc',
       preco: 16.82,
-      capa: 'public/img/greenhell.jpg'
+      capa: 'public/img/green.jpg'
     },
   ]
 
@@ -234,6 +237,25 @@
       capa: 'public/img/fallout.jpg'
     },
   ]
+
+ 
+
+  const genero = ref(0);
+
+ function action (){
+  genero.value = 0
+ }
+ function terror (){
+  genero.value = 1
+ }
+ function survival (){
+  genero.value = 2
+ }
+
+ function MA(){
+  genero.value = 3
+ }
+
 </script>
 
 
@@ -296,13 +318,84 @@
   </div>
 
   </header>
-  
-  <ul class="gayme">
-    <li v-for="jogo in jogosAcao">
-      <img :src="jogo.capa" :alt="jogo.nome">
-    </li>
-  </ul>
-  
+  <main>
+  <section>
+    <div>
+      <h2 style="text-align: center;
+      font-size: 2rem;
+      padding: 2vw 0;
+      font-family: sans-serif;">
+        Jogos
+      </h2>
+      <h3>
+        Categorias
+      </h3>
+      <div class="estilos">
+        <button @click="action()">
+          Ação
+        </button>
+        <button @click="terror()">
+          terror
+        </button>
+        <button @click="survival()">
+          Sobrevivência
+        </button>
+        <button @click="MA()">
+          Mundo aberto
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+  <div v-if="genero == 0">
+    <ul class="gayme">
+      <li v-for="jogo in jogosAcao">
+        <img :src="jogo.capa" :alt="jogo.nome">
+        <p class="nome">{{ jogo.nome }}</p>
+        <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
+        <p class="plataforma">{{ jogo.plataforma }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div v-if="genero == 1">
+    <ul class="gayme">
+      <li v-for="jogo in jogosTerror">
+        <img :src="jogo.capa" :alt="jogo.nome">
+        <p class="nome">{{ jogo.nome }}</p>
+        <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
+        <p class="plataforma">{{ jogo.plataforma }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div v-if="genero == 2">
+    <ul class="gayme">
+      <li v-for="jogo in jogosSurvival">
+        <img :src="jogo.capa" :alt="jogo.nome">
+        <p class="nome">{{ jogo.nome }}</p>
+        <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
+        <p class="plataforma">{{ jogo.plataforma }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div v-if="genero == 3">
+    <ul class="gayme">
+      <li v-for="jogo in jogosMA">
+        <img :src="jogo.capa" :alt="jogo.nome">
+        <p class="nome">{{ jogo.nome }}</p>
+        <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
+        <p class="plataforma">{{ jogo.plataforma }}</p>
+      </li>
+    </ul>
+  </div>
+
+
+</section>
+</main>
 
   
   </html>
@@ -310,21 +403,39 @@
 
 
 <style scoped>
+main{
+  background-color: aliceblue;
+}
   ul.gayme{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    
-  }
+   
+    padding: 2vw 2vw;
+
+  } 
 
   ul.gayme li{
-    width:25%;
+    width:20.5%;
+    padding: 1vw 2vw;
   }
 
   ul.gayme li img{
-    width:80%;
-    height: 20vw;
+    width:100%;
+    height: 25vw;
+  }
+
+  ul.gayme li p.nome{
+    font-size: 0.8rem;
+    font-family: 'comfortaa';
+  }
+  ul.gayme li p.preco{
+    font-size: 0.7rem;
+    margin: 0.1vw 0;
+  }
+  ul.gayme li p.plataforma{
+    font-size: 0.6rem;
   }
 
 </style>
