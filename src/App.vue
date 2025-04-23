@@ -242,8 +242,11 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
 
 main{
-  background-color: aliceblue;
+  background-color: var(--fundo);
+  padding-bottom: 5vw;
 }
+
+
   ul.gayme{
     display: flex;
     justify-content: center;
@@ -255,8 +258,12 @@ main{
   } 
 
   ul.gayme li{
-    width:20.5%;
-    padding: 1vw 2vw 2vw 2vw;
+  background-color: var(--secundaria);
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
+  border-radius: 0.8vw;
+  margin: 1vw;
+  width:20.5%;
+  padding: 1vw 2vw 2vw 2vw;
   }
 
   ul.gayme li img{
@@ -279,7 +286,9 @@ main{
   ul.gayme li button {
     width: 100%;
     text-align: center;
-    background-color: #27AE60;
+    background-color: var(--destaque);
+    color: black;
+    font-weight: bold;
     border: none;
     color: white;
     border-radius:0.5vw ;
@@ -289,7 +298,8 @@ main{
     cursor: pointer;
   }
   ul.gayme li button:hover{
-    background-color: #1f8b4c;
+    background-color: var(--hover);
+    color: white;
     transition: 0.2s;
   }
 
@@ -305,10 +315,10 @@ main{
   width: 10%;
   height: 5vw;
   font-size: 0.8rem;
-  border: none;
-  background-color: #3a434a;
+  background-color: var(--secundaria);
+  border: 1px solid var(--borda);
+  color: var(--texto);
   border-radius: 2vw;
-  color: white;
   cursor: pointer;
   font-family: 'DM Sans';
   box-shadow: 0.2vw 0.2vw black;
