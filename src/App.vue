@@ -3,7 +3,32 @@ import {ref} from 'vue';
 
 import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
-  
+  const todosJogos = jogosAcao.concat(jogosMA, jogosSurvival, jogosTerror);
+  const listaCarrinho = [];
+
+  for (let jogo of todosJogos) {
+  jogo.quantidade = 0
+}
+
+function adicionarAoCarrinho(jogo) {
+  const existe = listaCarrinho.find(item => item.id === jogo.id)
+  if (existe) {
+    existe.quantidade++
+  } else {
+    listaCarrinho.push({ ...jogo, quantidade: 1 })
+  }
+}
+
+function removerDoCarrinho(jogo) {
+  const index = listaCarrinho.findIndex(item => item.id === jogo.id)
+  if (index !== -1) {
+    if (listaCarrinho[index].quantidade > 1) {
+      listaCarrinho[index].quantidade--
+    } else {
+      listaCarrinho.splice(index, 1)
+    }
+  }
+}
 
  
 
@@ -74,7 +99,7 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
         </a>
       </li>
 
-      <li>
+      <li >
         <a href="">
           Termos
         </a>
@@ -161,7 +186,7 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   @click="toggleFavorito(jogo)"
 ></span>
         </div>
-        <button class="buy">
+        <button class="buy" @click="adicionarAoCarrinho(jogo)">
           <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
         </button>
       </li>
@@ -180,14 +205,14 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
         <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
         <p class="plataforma">{{ jogo.plataforma }}</p>
         </div>
-        <span class="fa-regular fa-heart" style="margin-top: 2vw;"></span>
-        </div>
-        <button class="buy">
-          <span
+        <span
   class="fa-heart"
   :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
   @click="toggleFavorito(jogo)"
 ></span>
+        </div>
+        <button class="buy" @click="adicionarAoCarrinho(jogo)">
+          <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
         </button>
       </li>
     </ul>
@@ -210,7 +235,7 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   @click="toggleFavorito(jogo)"
 ></span>
         </div>
-        <button class="buy">
+        <button class="buy" @click="adicionarAoCarrinho(jogo)">
           <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
         </button>
       </li>
@@ -236,7 +261,7 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   @click="toggleFavorito(jogo)"
 ></span>
       </div>
-        <button class="buy">
+      <button class="buy" @click="adicionarAoCarrinho(jogo)">
           <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
         </button>
       </li>
@@ -246,7 +271,45 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
 </section>
 </div>
-<div class="carrinho" v-if="paginas == 1"></div>
+<div class="carrinho" v-if="paginas == 1">
+
+  <h2 style="text-align: center;
+      font-size: 2rem;
+      padding: 2vw 0;
+      font-family: sans-serif;">Carrinho</h2>
+  <div v-if="listaCarrinho.length === 0" style="text-align:center; padding: 2vw;">
+  Seu carrinho está vazio 
+</div>
+
+<div v-if="listaCarrinho.length === 0" style="text-align:center; padding: 2vw;">
+  Seu carrinho está vazio 😢
+</div>
+
+<ul v-else class="pagCarrinho">
+  <li v-for="item in listaCarrinho" :key="item.id">
+    <img :src="item.capa" :alt="item.nome">
+    <div class="cora">
+      <div>
+        <p class="nome">{{ item.nome }}</p>
+        <p style="margin: 1vw 5vw 1vw 5vw;" class="preco">R${{ item.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
+        <p style="margin-bottom: 1vw;" class="plataforma">{{ item.plataforma }}</p>
+        <p class="quantidade">Quantidade: {{ item.quantidade }}</p>
+      </div>
+      <button @click="removerDoCarrinho(item)" >Remover</button>
+    </div>
+  </li>
+  <div >
+  Total: R$ {{
+    listaCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0)
+    .toLocaleString('pt-BR', { minimumFractionDigits: 2 })
+  }}
+</div>
+</ul>
+
+
+
+
+</div>
 </main>
 
   
@@ -367,5 +430,27 @@ main{
 .favorito {
   color: red;
 }
+
+
+
+
+/*CARRINHO*/
+.pagCarrinho{
+  display: block;
+  margin: 0 2vw;
+}
+.pagCarrinho li{
+  display: flex;
+  align-items: center;
+}
+.pagCarrinho img{
+  width: 12%;
+  height: 15vw;
+}
+.pagCarrinho p{
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
 
 </style>
