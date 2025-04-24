@@ -123,6 +123,11 @@ header ul.icon li:hover{
   transition: 0.3s;
 }
 
+header ul.icon li button{
+  border: none;
+  
+}
+
 /*Pesquisar*/
 .pesquisar {
   position: relative;

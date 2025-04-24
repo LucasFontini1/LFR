@@ -68,8 +68,8 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
     </div>
     <div style="display: flex; align-items: center;">
     <ul class="ulPrincipal">
-      <li>
-        <a href="">
+      <li  @click="hmpg()">
+        <a>
           HomePage
         </a>
       </li>
@@ -95,8 +95,8 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   
     </ul>
     <ul class="icon">
-      <li>
-        <a href=""><span class="fa-solid fa-cart-shopping"></span></a>
+      <li @click="carrinho()">
+        <a ><span class="fa-solid fa-cart-shopping"></span></a>
       </li>
 
       <li >
@@ -111,7 +111,8 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
   </header>
   <main>
-  <section>
+    <div class="hmpg" v-if="paginas == 0">
+  <section >
     <div>
       <h2 style="text-align: center;
       font-size: 2rem;
@@ -244,6 +245,8 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   </transition>
 
 </section>
+</div>
+<div class="carrinho" v-if="paginas == 1"></div>
 </main>
 
   
