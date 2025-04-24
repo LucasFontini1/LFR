@@ -29,6 +29,12 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   jogo.favorito = !jogo.favorito; 
 }
 
+
+
+  const paginas = ref(0)
+
+
+
 </script>
 
 
