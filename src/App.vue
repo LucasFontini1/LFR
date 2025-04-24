@@ -29,6 +29,25 @@ import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
   jogo.favorito = !jogo.favorito; 
 }
 
+
+
+  const paginas = ref(0)
+
+  function hmpg(){
+    paginas.value = 0
+  }
+  function carrinho(){
+    paginas.value = 1
+  }
+  function favorito(){
+    paginas.value = 2
+  }
+  function cadastro(){
+    paginas.value = 3
+  }
+
+
+
 </script>
 
 
