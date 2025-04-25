@@ -19,7 +19,7 @@ export const jogosAcao = [
   },
   {
     id: 3,
-    nome: 'Dead by daylihght',
+    nome: 'Dead by daylight',
     plataforma: 'Ps, Xbox, Pc',
     preco: 59.99,
     capa: 'public/img/Dead_By_Daylight.png',
