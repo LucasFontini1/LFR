@@ -71,6 +71,12 @@
   }
 }
 
+function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
   </script>
 
@@ -344,9 +350,9 @@
 
   <footer>
 
-    <img src="/public/img/logo.png" alt="" >
 
-    <hr >
+
+
 <div class="all">
 
 
@@ -359,9 +365,10 @@
      <span class="fa-solid fa-clock"></span> 09h às 19h - seg a sex
     </p>
 
-    <span class="fa-solid fa-envelope"></span>gameslfr@gmail.com
+    <span class="fa-solid fa-envelope"></span> gameslfr@gmail.com
   </div>
 
+<img src="/public/img/logo.png" alt="" >
 <div>
 
 </div>
@@ -379,8 +386,9 @@
 </div>
 
 
-
-
+<div style="text-align: center; margin-top: 2vw;">
+  <button @click="scrollToTop()" class="scroll-top-btn">↑ Voltar ao topo</button>
+</div>
 
   </footer>
 

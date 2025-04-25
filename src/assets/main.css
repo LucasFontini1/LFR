@@ -176,19 +176,46 @@ footer {
 }
 .all {
   display: flex;
+  justify-content: space-between;
 }
-footer img {
+.all img {
   width: 5vw;
+  height: 5%;
   border-radius: 2vw;
-  margin-top: 1vw;
+  margin-top: 2vw;
+  margin-left: 64vw;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 .contato p {
 margin-top: 1vw;
+font-weight: bold;
 
 
 }
 .contato span {
   margin-top: 1vw;
   margin-bottom: 1vw;
+}
+
+.direitos p {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.scroll-top-btn {
+  background-color: transparent;
+  color: #66c0f4;
+  border: 1px solid #66c0f4;
+  padding: 0.5vw 1vw;
+  border-radius: 2vw;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #66c0f4;
+  color: #1b2838;
 }
