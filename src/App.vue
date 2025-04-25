@@ -299,7 +299,7 @@
     <li v-for="item in listaCarrinho" :key="item.id">
       <div class="tittle-carrinho">
       <img :src="item.capa" :alt="item.nome">
-      <div>
+      <div class="nomePlatPrec">
       <h3 class="nmjg">
         {{ item.nome }}
       </h3>
@@ -328,11 +328,24 @@
       </div>
 
     </li>
-    <div >
+    <div class="total">
+      <div class="descont"> 
+        <p>
+        <label for="desconto" class="label-desconto">Insira um cupom de desconto</label>
+        </p>
+        <p>
+        <input type="text" class="desc" placeholder="Insira o cupom">
+        </p>
+      </div>
+      <div class="total-final">
+      <h2>
     Total: R$ {{
       listaCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0)
       .toLocaleString('pt-BR', { minimumFractionDigits: 2 })
     }}
+    </h2>
+    <button class="finalizar" @click="listaCarrinho = []">Finalizar</button>
+  </div>
   </div>
   </ul>
 
@@ -357,7 +370,7 @@
 
 
   main{
-    background-color: aliceblue;
+    background-color: white;
   }
     ul.gayme{
       display: flex;
@@ -532,5 +545,51 @@
     width: 10%;
   }
 
+  .nomePlatPrec{
+    margin-left: 1vw;
+  }
 
+
+  .total{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 6vw;
+    align-items: center;
+    padding-bottom: 5vw;
+  }
+
+  .descont{
+    border: #1f8b4c 3px solid;
+    margin-top: 4vw;
+    padding:1vw 3vw; 
+  }
+
+
+  .descont label{
+    font-size: 1rem;
+    
+  }
+  .descont input{
+    font-size: 0.5rem;
+    border: black 2px solid;
+    padding: 0.5vw 1.8vw;
+    width: 80%;
+  }
+
+
+  .total .total-final{
+    width: 13.1%;
+    margin-right: 2vw;
+  }
+  .total .total-final button{
+    background-color: #27AE60;
+    border: 2px solid #1f8b4c;
+    box-shadow: black 0.1vw 0.1vw;
+    font-size: 0.7rem;
+    color: white;
+    width: 100%;
+  }
+  .total .total-final h2{
+    width: 100%;
+  }
   </style>
