@@ -200,7 +200,7 @@ function scrollToTop() {
   ></span>
           </div>
           <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
           </button>
         </li>
       </ul>
@@ -225,7 +225,7 @@ function scrollToTop() {
   ></span>
           </div>
           <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
           </button>
         </li>
       </ul>
@@ -249,7 +249,7 @@ function scrollToTop() {
   ></span>
           </div>
           <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
           </button>
         </li>
       </ul>
@@ -275,7 +275,7 @@ function scrollToTop() {
   ></span>
         </div>
         <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar">Comprar</span>
+            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
           </button>
         </li>
       </ul>
