@@ -5,7 +5,7 @@
 
     const todosJogos = jogosAcao.concat(jogosMA, jogosSurvival, jogosTerror);
     const listaCarrinho = ref([]);
-    
+
 
     for (let jogo of todosJogos) {
     jogo.quantidade = 0
@@ -153,7 +153,9 @@ function scrollToTop() {
         <h2 style="text-align: center;
         font-size: 2rem;
         padding: 2vw 0;
-        font-family: sans-serif;">
+        font-family: sans-serif;
+        color: aliceblue;"
+        >
           Jogos
         </h2>
 
@@ -164,14 +166,14 @@ function scrollToTop() {
             Ação
           </button>
           <button @click="terror()">
-            terror
+            Terror
           </button>
 
           <button @click="survival()">
             Sobrevivência
           </button>
           <button @click="MA()">
-            Mundo aberto
+            Mundo Aberto
           </button>
         </div>
         </div>
@@ -412,14 +414,14 @@ function scrollToTop() {
 
 
   main{
-    background-color: aliceblue;
+    background: linear-gradient(135deg, #171a21, #1b2838, #2a475e);
   }
     ul.gayme{
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       align-items: center;
-
+      color: aliceblue;
       padding: 2vw 2vw;
 
     }
@@ -448,6 +450,7 @@ function scrollToTop() {
     ul.gayme li p.preco{
       font-size: 0.7rem;
       margin: 0.1vw 0;
+      font-weight: bold;
     }
     ul.gayme li p.plataforma{
       font-size: 0.6rem;
@@ -455,7 +458,7 @@ function scrollToTop() {
     ul.gayme li button {
       width: 100%;
       text-align: center;
-      background-color: #27AE60;
+      background: linear-gradient(135deg, #19422d, #174d37, #177f4b);
       border: none;
       color: white;
       border-radius:0.5vw ;
@@ -465,7 +468,7 @@ function scrollToTop() {
       cursor: pointer;
     }
     ul.gayme li button:hover{
-      background-color: #1f8b4c;
+      background: linear-gradient(135deg, #51e598, #1add8f, #13ea7f);
       transition: 0.2s;
     }
 
@@ -519,6 +522,10 @@ function scrollToTop() {
 
 
   /*CARRINHO*/
+div.carrinho {
+  color: aliceblue;
+}
+
   ul.pagCarrinho li{
     margin: 0vw 6vw;
     padding: 2vw 3vw;
