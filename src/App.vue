@@ -5,6 +5,7 @@
 
     const todosJogos = jogosAcao.concat(jogosMA, jogosSurvival, jogosTerror);
     const listaCarrinho = ref([]);
+    
 
     for (let jogo of todosJogos) {
     jogo.quantidade = 0
@@ -58,6 +59,11 @@
     function cadastro(){
       paginas.value = 3
     }
+
+    function toggleFavorito(jogo) {
+  jogo.favorito = !jogo.favorito;
+}
+
 
 
     function removerDoCarrinho(item) {
@@ -419,9 +425,15 @@ function scrollToTop() {
     }
 
     ul.gayme li{
-      width:20.5%;
+     width: calc(50% - 2vw);
       padding: 1vw 2vw 2vw 2vw;
     }
+
+    @media (min-width: 768px) {
+  ul.gayme li {
+    width: calc(25% - 2vw);
+  }
+}
 
     ul.gayme li img{
       width:100%;
