@@ -61,9 +61,6 @@
       paginas.value = 3
     }
 
-    function toggleFavorito(jogo) {
-  jogo.favorito = !jogo.favorito;
-}
 
 
 
@@ -71,12 +68,13 @@
   if (item.quantidade > 1) {
     item.quantidade--;
   } else {
-    const index = listaCarrinho.value.findIndex(i => i.id === item.id);
+    const index = listaCarrinho.value.find(i => i.id === item.id);
     if (index !== -1) {
       listaCarrinho.value.splice(index, 1);
     }
   }
 }
+
 
 function scrollToTop() {
     window.scrollTo({
@@ -343,12 +341,26 @@ function scrollToTop() {
       </div>
 
     </li>
-    <div >
+    <div class="total">
+      <div class="descont">
+        <p>
+        <label for="desconto" class="label-desconto">Insira um cupom de desconto</label>
+        </p>
+        <p>
+        <input type="text" class="desc" placeholder="Insira o cupom">
+        </p>
+      </div>
+      <div class="total-final">
+      <h2>
     Total: R$ {{
       listaCarrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0)
       .toLocaleString('pt-BR', { minimumFractionDigits: 2 })
     }}
+    </h2>
+    <button class="finalizar" @click="listaCarrinho = []">Finalizar</button>
   </div>
+  </div>
+
   </ul>
 
 
@@ -608,6 +620,88 @@ div.carrinho {
   div.localizacao .quantidade{
     width: 10%;
   }
+
+  .total{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 6vw;
+    align-items: center;
+    padding-bottom: 5vw;
+  }
+
+
+  .descont{
+    border: #1f8b4c 3px solid;
+    margin-top: 4vw;
+    padding:1vw 3vw;
+  }
+
+
+
+
+  .descont label{
+    font-size: 1rem;
+
+  }
+  .descont input{
+    font-size: 0.5rem;
+    border: black 2px solid;
+    padding: 0.5vw 1.8vw;
+    width: 80%;
+  }
+
+
+
+
+  .total .total-final{
+    width: 13.61%;
+    margin-right: 2vw
+  }
+  .total .total-final button{
+    background-color: #27AE60;
+    border: 2px solid #1f8b4c;
+    box-shadow: black 0.1vw 0.1vw;
+    font-size: 0.7rem;
+    color: white;
+    width: 100%;
+  }
+  .total .total-final h2{
+    width: 100%;
+  }
+
+  /*FORMULARI */
+
+
+  #formulario{
+    text-align: center;
+  }
+  #formulario form label{
+    width: 20%;
+  }
+  #formulario form input{
+    width: 20%;
+    padding: 0.2vw 0.5vw;
+    font-size: 0.5rem;
+  }
+
+
+  #formulario form button{
+    width: 10%;
+    background-color: #27AE60;
+    color: white;
+    box-shadow: 0.1vw 0.1vw black;
+    text-shadow: 0.05vw 0.05vw black;
+    padding: 0.2vw 0.5vw;
+    font-size: 0.7rem;
+    margin-top: 5vw;
+  }
+
+
+  #formulario form button:hover{
+    background-color: #1f8b4c;
+    transition: 0.3s;
+  }
+
 
 
 
