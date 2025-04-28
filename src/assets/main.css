@@ -85,7 +85,7 @@ header input{
 }
 
 header input:hover{
-  background-color: rgba(102, 192, 244, 0.2);
+  background-color: rgba(226, 234, 238, 0.856);
   transition: 0.3s;
 }
 

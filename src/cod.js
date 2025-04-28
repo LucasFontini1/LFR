@@ -9,7 +9,7 @@ export const jogosAcao = [
     },
     {
       id: 2,
-      nome: 'The last of us 2',
+      nome: 'The Last of Us II',
       plataforma: 'Ps5, Pc',
       preco: 400,
       capa: 'public/img/tlou.png',
@@ -17,7 +17,7 @@ export const jogosAcao = [
     },
     {
       id: 3,
-      nome: 'Dead by daylihght',
+      nome: 'Dead by Daylight',
       plataforma: 'Ps, Xbox, Pc',
       preco: 59.99,
       capa: 'public/img/Dead_By_Daylight.png',
@@ -25,7 +25,7 @@ export const jogosAcao = [
     },
     {
       id: 4,
-      nome: 'Dying light',
+      nome: 'Dying Light',
       plataforma: 'Ps, Xbox, Pc',
       preco: 39.99,
       capa: 'public/img/diyng light.jpg',
@@ -159,7 +159,7 @@ export const jogosAcao = [
     },
     {
       id: 4,
-      nome: 'No man`s sky',
+      nome: 'No Man`s Sky',
       plataforma: 'Ps, Xbox, Pc',
       preco: 162,
       capa: 'public/img/nomanssky.jpg',

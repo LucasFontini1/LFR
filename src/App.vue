@@ -1,6 +1,7 @@
   <script setup>
   import {ref} from 'vue';
 
+
   import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
 
     const todosJogos = jogosAcao.concat(jogosMA, jogosSurvival, jogosTerror);
@@ -414,8 +415,11 @@ function scrollToTop() {
 
 
   main{
-    background: linear-gradient(135deg, #171a21, #1b2838, #2a475e);
+    background: linear-gradient(135deg, #1e283d, #1c2e44, #2a475e);
+    padding-bottom: 5vw;
   }
+
+
     ul.gayme{
       display: flex;
       justify-content: center;
@@ -428,6 +432,10 @@ function scrollToTop() {
 
     ul.gayme li{
      width: calc(50% - 2vw);
+     background: linear-gradient(135deg, #1e283d, #122338, #2a475e);
+     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.5);
+     border-radius: 0.8vw;
+     margin: 1vw;
       padding: 1vw 2vw 2vw 2vw;
     }
 
@@ -468,8 +476,9 @@ function scrollToTop() {
       cursor: pointer;
     }
     ul.gayme li button:hover{
-      background: linear-gradient(135deg, #51e598, #1add8f, #13ea7f);
+      background: linear-gradient(135deg, #51e598, #378f6c, #1c9659);
       transition: 0.2s;
+
     }
 
     /*GENEROS */
@@ -484,10 +493,10 @@ function scrollToTop() {
     width: 10%;
     height: 5vw;
     font-size: 0.8rem;
-    border: none;
-    background-color: #3a434a;
+    border: 1px solid #2a375e;
+    background-color: #171a21;
     border-radius: 2vw;
-    color: white;
+    color: aliceblue;
     cursor: pointer;
     font-family: 'DM Sans';
     box-shadow: 0.2vw 0.2vw black;
