@@ -127,8 +127,8 @@
           <a href=""><span class="fa-solid fa-heart"></span></a>
         </li>
 
-        <li >
-          <a href=""><span class="fa-solid fa-user"></span></a>
+        <li @click="cadastro()">
+          <a ><span class="fa-solid fa-user"></span></a>
         </li>
       </ul>
     </div>
@@ -352,6 +352,30 @@
 
 
 
+  </div>
+  <div class="cadastro" v-if="paginas == 3">
+    <h2 style="text-align: center;
+        font-size: 2rem;
+        padding: 2vw 0;
+        font-family: sans-serif;">
+          Cadastro
+        </h2>
+        <section id="formulario">
+          <form action="#" method="get">
+
+            <p class="label"><label for="nm">*Nome</label></p>
+            <p class="input"><input type="text" placeholder="Nome"></p>
+
+            <p style="margin-top: 2vw;" class="label"><label for="emai">*E-Mail</label></p>
+            <p style="margin-bottom: 2vw;" class="input"><input type="email" placeholder="E-Mail"></p>
+
+            <p class="label"><label for="senha">*Senha</label></p>
+            <p class="input"><input type="password" placeholder="Senha"></p>
+
+            <button type="submit">Logar</button>
+
+          </form>
+        </section>
   </div>
   </main>
 
@@ -592,4 +616,36 @@
   .total .total-final h2{
     width: 100%;
   }
+
+  /*FORMULARI */
+
+  #formulario{
+    text-align: center;
+  }
+  #formulario form label{
+    width: 20%;
+  }
+  #formulario form input{
+    width: 20%;
+    padding: 0.2vw 0.5vw;
+    font-size: 0.5rem;
+  }
+
+  #formulario form button{
+    width: 10%;
+    background-color: #27AE60;
+    color: white;
+    box-shadow: 0.1vw 0.1vw black;
+    text-shadow: 0.05vw 0.05vw black;
+    padding: 0.2vw 0.5vw;
+    font-size: 0.7rem;
+    margin-top: 5vw;
+  }
+
+  #formulario form button:hover{
+    background-color: #1f8b4c;
+    transition: 0.3s;
+  }
+
+
   </style>
