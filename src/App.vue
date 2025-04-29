@@ -654,7 +654,7 @@ div.carrinho {
 
 
   .total .total-final{
-    width: 13.61%;
+    width: 14%;
     margin-right: 2vw
   }
   .total .total-final button{
