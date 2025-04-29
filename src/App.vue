@@ -633,7 +633,7 @@ div.carrinho {
   .descont{
     border: #1f8b4c 3px solid;
     margin-top: 4vw;
-    padding:1vw 3vw;
+    padding:2vw 3vw;
   }
 
 
