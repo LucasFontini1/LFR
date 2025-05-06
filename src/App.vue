@@ -149,11 +149,7 @@ function scrollToTop() {
       <div class="hmpg" v-if="paginas == 0">
     <section >
       <div>
-        <h2 style="text-align: center;
-        font-size: 2rem;
-        padding: 2vw 0;
-        font-family: sans-serif;
-        color: aliceblue;"
+        <h2 class="tittle-main"
         >
           Jogos
         </h2>
@@ -161,17 +157,34 @@ function scrollToTop() {
         <div class="generos">
 
         <div>
-          <button @click="action()">
+          <button v-if="genero !== 0" @click="action()">
             Ação
           </button>
-          <button @click="terror()">
+          <button class="selected" v-else="" @click="action()">
+            Ação
+          </button>
+
+
+          <button v-if="genero !== 1" @click="terror()">
+            Terror
+          </button>
+          <button class="selected" v-else @click="terror()">
             Terror
           </button>
 
-          <button @click="survival()">
+
+          <button v-if="genero !== 2" @click="survival()">
             Sobrevivência
           </button>
-          <button @click="MA()">
+          <button class="selected" v-else @click="survival()">
+            Sobrevivência
+          </button>
+
+
+          <button v-if="genero !== 3" @click="MA()">
+            Mundo Aberto
+          </button>
+          <button class="selected" v-else @click="MA()">
             Mundo Aberto
           </button>
         </div>
@@ -285,10 +298,7 @@ function scrollToTop() {
   </div>
   <div class="carrinho" v-if="paginas == 1">
 
-    <h2 style="text-align: center;
-        font-size: 2rem;
-        padding: 2vw 0;
-        font-family: sans-serif;">Carrinho</h2>
+    <h2 class="tittle-main" >Carrinho</h2>
 
     <div class="localizacao">
       <h3 class="titulo">
@@ -501,6 +511,8 @@ function scrollToTop() {
     align-items: center;
   }
 
+
+
   .generos div button{
     width: 10%;
     height: 5vw;
@@ -591,7 +603,7 @@ div.carrinho {
     background-color: #27AE60;
     color: white;
     font-size: 1.3rem;
-    padding: 0.5vw 1vw;
+    
     width: 100%;
     cursor: pointer;
     text-shadow: black 0.05vw 0.05vw;
@@ -655,7 +667,8 @@ div.carrinho {
 
   .total .total-final{
     width: 14%;
-    margin-right: 2vw
+    margin-right: 2vw;
+    white-space: nowrap;
   }
   .total .total-final button{
     background-color: #27AE60;
@@ -706,6 +719,17 @@ div.carrinho {
 
 
 
+ .generos button.selected{
+  border: aliceblue 1px solid;
+ }
 
+
+ main h2.tittle-main{
+  text-align: center;
+        font-size: 2rem;
+        padding: 2vw 0;
+        font-family: 'comfortaa';
+        color: aliceblue;
+ }
 
   </style>
