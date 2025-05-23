@@ -1,8 +1,311 @@
   <script setup>
   import {ref} from 'vue';
 
+  import HeaderComponent from './components/HeaderComponent.vue';
+  import GenerosComponent from './components/GenerosComponent.vue';
+  import TransitionComponent from './components/TransitionComponent.vue';
 
-  import { jogosAcao, jogosTerror, jogosSurvival, jogosMA } from './cod.js';
+
+ const jogosAcao = [
+  {
+    id: 1,
+    nome: 'Bioshock 1',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 25,
+    capa: '/img/bioshock.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 2,
+    nome: 'The last of us 2',
+    plataforma: 'Ps5, Pc',
+    preco: 400,
+    capa: '/img/tlou.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 3,
+    nome: 'Dead by daylight',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 59.99,
+    capa: '/img/Dead_By_Daylight.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 4,
+    nome: 'Dying light',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 39.99,
+    capa: '/img/diyng light.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 5,
+    nome: 'Uncharted',
+    plataforma: 'Ps, Pc',
+    preco: 199.90,
+    capa: '/img/uncharted.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 6,
+    nome: 'God Of War',
+    plataforma: 'Ps, Pc',
+    preco: 199.90,
+    capa: '/img/GOW.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 7,
+    nome: 'Far Cry 4',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 89.99,
+    capa: '/img/farcry.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 8,
+    nome: 'Resident Evil 4',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 39.99,
+    capa: '/img/residentEvil.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+]
+
+ const jogosTerror = [
+  {
+    id: 9,
+    nome: 'Outlast',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 59.99,
+    capa: '/img/outlast.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 10,
+    nome: 'Fnaf',
+    plataforma: 'Ps5, Pc',
+    preco: 75,
+    capa: '/img/FNAF.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 11,
+    nome: 'Visage',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 65.99,
+    capa: '/img/visage.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 12,
+    nome: 'Phasmophobia',
+    plataforma: 'Pc',
+    preco: 59.99,
+    capa: '/img/phasmophobia.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 13,
+    nome: 'Poppy Playtime',
+    plataforma: 'Pc',
+    preco: 46.99,
+    capa: '/img/poppyplaytime.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 14,
+    nome: 'Stay out of the house',
+    plataforma: 'Pc',
+    preco: 59.90,
+    capa: '/img/stayoutofthehouse.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 15,
+    nome: 'Nun Massacre',
+    plataforma: 'Pc',
+    preco: 50,
+    capa: '/img/nunmassacre.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 16,
+    nome: 'Silent Hill',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 349.90,
+    capa: '/img/silenthill.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+]
+
+ const jogosSurvival = [
+  {
+    id: 17,
+    nome: 'Minecraft',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 200,
+    capa: '/img/minecraft.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 18,
+    nome: 'ARK',
+    plataforma: 'Ps5, Xbox, Pc',
+    preco: 46.99,
+    capa: '/img/ark.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 19,
+    nome: 'The Forest',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 37.99,
+    capa: '/img/forest.jpeg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 20,
+    nome: 'No man`s sky',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 162,
+    capa: '/img/nomanssky.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 21,
+    nome: 'Stranded Deep',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 37.99,
+    capa: '/img/stranded.jpeg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 22,
+    nome: 'Subnautica',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 124.50,
+    capa: '/img/subnautica.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 23,
+    nome: 'Raft',
+    plataforma: 'Pc',
+    preco: 36.99,
+    capa: '/img/raft.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 24,
+    nome: 'Green Hell',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 16.82,
+    capa: '/img/green.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+]
+
+ const jogosMA = [
+  {
+    id: 25,
+    nome: 'Red Dead Redemption',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 200,
+    capa: '/img/rdr2.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 26,
+    nome: 'GTA',
+    plataforma: 'Ps5, Xbox, Pc',
+    preco: 37,
+    capa: '/img/gta.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 27,
+    nome: 'Watch Dogs',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 22.49,
+    capa: '/img/watchdogs2.png',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 28,
+    nome: 'Assassin`s Creed',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 349.99,
+    capa: '/img/ac.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 29,
+    nome: 'Spider Man',
+    plataforma: 'Ps, Pc',
+    preco: 249.90,
+    capa: '/img/spiderman.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 30,
+    nome: 'Batman Arkham',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 89.99,
+    capa: '/img/batman.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 31,
+    nome: 'DAYZ',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 74.99,
+    capa: '/img/dayz.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+  {
+    id: 32,
+    nome: 'Fallout',
+    plataforma: 'Ps, Xbox, Pc',
+    preco: 59.99,
+    capa: '/img/fallout.jpg',
+    favorito: false,
+    quantidade: 0
+  },
+]
+
 
     const todosJogos = jogosAcao.concat(jogosMA, jogosSurvival, jogosTerror);
     const listaCarrinho = ref([]);
@@ -54,12 +357,7 @@
     function carrinho(){
       paginas.value = 1
     }
-    function favorito(){
-      paginas.value = 2
-    }
-    function cadastro(){
-      paginas.value = 3
-    }
+
 
 
 
@@ -89,212 +387,35 @@ function scrollToTop() {
 
   <template>
 
+  <header-component
+  @hmpg="hmpg"
+  @carrinho="carrinho"
+  />
 
 
-    <header>
-
-      <h1><a href="./App.vue"><img src="/public/img/logo.png" alt="GAMES LFR"></a></h1>
-
-      <div class="pesquisar">
-        <input type="text" placeholder="Pesquisar" >
-        <span class="fa-solid fa-magnifying-glass"></span>
-
-
-      </div>
-      <div style="display: flex; align-items: center;">
-      <ul class="ulPrincipal">
-        <li  @click="hmpg()">
-          <a>
-            HomePage
-          </a>
-        </li>
-
-        <li >
-          <a href="">
-            Termos
-          </a>
-        </li>
-
-        <li>
-          <a href="">
-            Equipe
-          </a>
-        </li>
-
-        <li>
-          <a href="">
-            Devoluções
-          </a>
-        </li>
-
-
-      </ul>
-      <ul class="icon">
-        <li @click="carrinho()">
-          <a ><span class="fa-solid fa-cart-shopping"></span></a>
-        </li>
-
-        <li >
-          <a href=""><span class="fa-solid fa-heart"></span></a>
-        </li>
-
-        <li >
-          <a href=""><span class="fa-solid fa-user"></span></a>
-        </li>
-      </ul>
-    </div>
-
-    </header>
     <main>
       <div class="hmpg" v-if="paginas == 0">
-    <section >
-      <div>
-        <h2 class="tittle-main"
+         <h2 class="tittle-main"
         >
           Jogos
         </h2>
+        <generos-component
+        @acao="action"
+        @terror="terror"
+        @sobr="survival"
+        @ma="MA"
+        :genero="genero"
+        />
 
-        <div class="generos">
+          <transition-component
+          :all-games="todosJogos"
+          :ac-games="jogosAcao"
+          :terror-games="jogosTerror"
+          :sv-games="jogosSurvival"
+          :ma-games="jogosMA"
+          @add-to-cart="adicionarAoCarrinho"
 
-        <div>
-          <button v-if="genero !== 0" @click="action()">
-            Ação
-          </button>
-          <button class="selected" v-else="" @click="action()">
-            Ação
-          </button>
-
-
-          <button v-if="genero !== 1" @click="terror()">
-            Terror
-          </button>
-          <button class="selected" v-else @click="terror()">
-            Terror
-          </button>
-
-
-          <button v-if="genero !== 2" @click="survival()">
-            Sobrevivência
-          </button>
-          <button class="selected" v-else @click="survival()">
-            Sobrevivência
-          </button>
-
-
-          <button v-if="genero !== 3" @click="MA()">
-            Mundo Aberto
-          </button>
-          <button class="selected" v-else @click="MA()">
-            Mundo Aberto
-          </button>
-        </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <transition name="fade" mode="out-in">
-    <div v-if="genero == 0">
-      <ul class="gayme">
-        <li v-for="jogo in jogosAcao" key="jogo.id">
-          <img :src="jogo.capa" :alt="jogo.nome">
-          <div class="cora">
-            <div>
-          <p class="nome">{{ jogo.nome }}</p>
-          <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
-          <p class="plataforma">{{ jogo.plataforma }}</p>
-          </div>
-          <span
-    class="fa-heart"
-    :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
-    @click="toggleFavorito(jogo)"
-  ></span>
-          </div>
-          <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-    </transition>
-
-    <transition name="fade" mode="out-in">
-    <div v-if="genero == 1">
-      <ul class="gayme">
-        <li v-for="jogo in jogosTerror" key="jogo.id">
-          <img :src="jogo.capa" :alt="jogo.nome">
-          <div class="cora">
-            <div>
-          <p class="nome">{{ jogo.nome }}</p>
-          <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
-          <p class="plataforma">{{ jogo.plataforma }}</p>
-          </div>
-          <span
-    class="fa-heart"
-    :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
-    @click="toggleFavorito(jogo)"
-  ></span>
-          </div>
-          <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-    </transition>
-    <transition name="fade" mode="out-in">
-    <div v-if="genero == 2">
-      <ul class="gayme">
-        <li v-for="jogo in jogosSurvival" key="jogo.id">
-          <img :src="jogo.capa" :alt="jogo.nome">
-          <div class="cora">
-            <div>
-          <p class="nome">{{ jogo.nome }}</p>
-          <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
-          <p class="plataforma">{{ jogo.plataforma }}</p>
-          </div>
-          <span
-    class="fa-heart"
-    :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
-    @click="toggleFavorito(jogo)"
-  ></span>
-          </div>
-          <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-    </transition>
-
-    <transition name="fade" mode="out-in">
-    <div v-if="genero == 3">
-      <ul class="gayme">
-        <li v-for="jogo in jogosMA" key="jogo.id">
-          <img :src="jogo.capa" :alt="jogo.nome">
-          <div class="cora" style="display: flex;
-          justify-content: space-between  ;">
-            <div>
-          <p class="nome">{{ jogo.nome }}</p>
-          <p class="preco">R${{ jogo.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</p>
-          <p class="plataforma">{{ jogo.plataforma }}</p>
-        </div>
-        <span
-    class="fa-heart"
-    :class="jogo.favorito ? 'fa-solid favorito' : 'fa-regular fa-heart'"
-    @click="toggleFavorito(jogo)"
-  ></span>
-        </div>
-        <button class="buy" @click="adicionarAoCarrinho(jogo)">
-            <span class="fa-solid fa-cart-shopping"></span><span class="comprar"> + Carrinho</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-    </transition>
-
-  </section>
+          />
   </div>
   <div class="carrinho" v-if="paginas == 1">
 
@@ -428,12 +549,7 @@ function scrollToTop() {
 
 
   <style scoped>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity 0.1s;
-  }
-  .fade-enter-from, .fade-leave-to {
-    opacity: 0.2;
-  }
+
 
 
   main{
@@ -503,49 +619,7 @@ function scrollToTop() {
 
     }
 
-    /*GENEROS */
 
-  .generos div{
-    display: flex;
-    justify-content:center ;
-    align-items: center;
-  }
-
-
-
-  .generos div button{
-    width: 10%;
-    height: 5vw;
-    font-size: 0.8rem;
-    border: 1px solid #2a375e;
-    background-color: #171a21;
-    border-radius: 2vw;
-    color: aliceblue;
-    cursor: pointer;
-    font-family: 'DM Sans';
-    box-shadow: 0.2vw 0.2vw black;
-    text-shadow: black 0.1vw 0.1vw;
-  }
-  .generos div button:nth-child(2){
-    margin: 0 2vw
-  }
-  .generos div button:nth-child(3){
-    margin-right: 2vw;
-  }
-    .generos div button:hover{
-    background-color: #596670;
-    width: 11%;
-    height: 5.2vw;
-    transition: 0.5s;
-  }
-
-  .cora span{
-    cursor: pointer;
-  }
-  .cora{
-    display: flex;
-          justify-content: space-between  ;
-  }
 
 
 
@@ -603,7 +677,7 @@ div.carrinho {
     background-color: #27AE60;
     color: white;
     font-size: 1.3rem;
-    
+
     width: 100%;
     cursor: pointer;
     text-shadow: black 0.05vw 0.05vw;
@@ -719,9 +793,7 @@ div.carrinho {
 
 
 
- .generos button.selected{
-  border: aliceblue 1px solid;
- }
+
 
 
  main h2.tittle-main{
